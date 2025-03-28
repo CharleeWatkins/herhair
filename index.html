@@ -2160,7 +2160,7 @@
                                 <div>
                                     <h4 class="font-medium">${product.name}</h4>
                                     <p class="text-sm text-gray-500">${product.category}</p>
-                                    <p class="text-primary font-semibold">$${product.price.toFixed(2)}</p>
+                                    <p class="text-primary font-semibold">R${product.price.toFixed(2)}</p>
                                 </div>
                             </div>
                         `).join('')}
@@ -2335,9 +2335,9 @@
                 const shipping = subtotal > 150 ? 0 : 10;
                 const total = subtotal + shipping;
                 
-                cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
-                cartShipping.textContent = shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
-                cartTotal.textContent = `$${total.toFixed(2)}`;
+                cartSubtotal.textContent = `R${subtotal.toFixed(2)}`;
+                cartShipping.textContent = shipping === 0 ? 'FREE' : `R${shipping.toFixed(2)}`;
+                cartTotal.textContent = `R${total.toFixed(2)}`;
             }
         }
         
@@ -2475,7 +2475,7 @@
                             <img src="${item.image}" alt="${item.name}" class="wishlist-item-image">
                             <div class="wishlist-item-details">
                                 <h3 class="font-medium">${item.name}</h3>
-                                <p class="font-semibold mt-1">$${item.price.toFixed(2)}</p>
+                                <p class="font-semibold mt-1">R${item.price.toFixed(2)}</p>
                                 <div class="flex space-x-2 mt-2">
                                     <button class="text-xs px-3 py-1 bg-primary text-white rounded-md hover:bg-primary-light transition-colors" onclick="addToCartFromWishlist(${item.id}); event.stopPropagation();">Add to Cart</button>
                                 </div>
@@ -2633,7 +2633,7 @@
                 productModalPrice.textContent = `$${product.price.toFixed(2)}`;
                 
                 if (product.comparePrice) {
-                    productModalComparePrice.textContent = `$${product.comparePrice.toFixed(2)}`;
+                    productModalComparePrice.textContent = `R${product.comparePrice.toFixed(2)}`;
                     productModalComparePrice.classList.remove('hidden');
                 } else {
                     productModalComparePrice.classList.add('hidden');
