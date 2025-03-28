@@ -1,0 +1,2859 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official | HerHair</title>
+    <meta name="description" content="Discover luxury hair extensions, wigs and accessories at HerHair. Premium quality human hair products designed to enhance your natural beauty.">
+    <meta property="og:title" content="Premium Hair Extensions & Wigs | HerHair">
+    <meta property="og:description" content="Discover luxury hair extensions, wigs and accessories at HerHair.">
+    <meta property="og:image" content="https://herhair.com/images/social-share.jpg">
+    <link rel="canonical" href="https://herhair.com/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#785e26',
+                            light: '#8a6d2f',
+                            dark: '#664f1f'
+                        },
+                        secondary: {
+                            DEFAULT: '#e9ddcf',
+                            light: '#f3eade',
+                            dark: '#d9c9b7'
+                        },
+                        accent: {
+                            DEFAULT: '#f3eade',
+                            light: '#ffffff',
+                            dark: '#e9ddcf'
+                        },
+                        dark: '#2c2c2c',
+                        light: '#f9f9f9'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'script': ['Corinthia', 'cursive']
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'medium': '0 6px 30px rgba(0, 0, 0, 0.1)',
+                        'hard': '0 8px 40px rgba(0, 0, 0, 0.15)'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-in-out',
+                        'slide-down': 'slideDown 0.5s ease-in-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo {
+            font-family: 'Corinthia', cursive;
+            font-weight: 700;
+        }
+        
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+        
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #846729;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-transparent {
+            background-color: transparent;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .carousel-container {
+            position: relative;
+            height: 95vh;
+            overflow: hidden;
+        }
+        
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 2;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%);
+        }
+        
+        .carousel-dots {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 3;
+        }
+        
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background-color: #fff;
+            transform: scale(1.2);
+        }
+        
+       
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image-container {
+            overflow: hidden;
+        }
+        
+        .product-image {
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            padding: 2rem 1.5rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .collection-card:hover .collection-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%);
+        }
+        
+        .collection-description {
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .collection-card:hover .collection-description {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 0.5rem;
+        }
+        .btn-primary {
+            background-color: #785e26;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #846729;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 77, 26, 0.2);
+        }
+        
+        .btn-outline {
+            border: 2px solid #785e26;
+            color: #785e26;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(0, 77, 26, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .color-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .color-swatch:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #785e26;
+        }
+        
+        .color-swatch.active {
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #785e26;
+        }
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .search-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .search-input {
+            width: 100%;
+            max-width: 600px;
+            padding: 1rem;
+            font-size: 1.5rem;
+            border: none;
+            border-bottom: 2px solid #785e26;
+            background-color: transparent;
+            outline: none;
+            margin-bottom: 2rem;
+        }
+        
+        .search-results {
+            width: 100%;
+            max-width: 600px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 400px;
+            max-width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cart-sidebar.active {
+            transform: translateX(0);
+        }
+        
+        .cart-item {
+            display: flex;
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-remove {
+            color: #ef4444;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .cart-item-remove:hover {
+            transform: scale(1.1);
+        }
+        .auth-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .auth-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .auth-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            width: 100%;
+            max-width: 500px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .auth-modal.active .auth-container {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .auth-tab {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .auth-tab.active {
+            color: #785e26;
+        }
+        
+        .auth-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #785e26;
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        .wishlist-item {
+            display: flex;
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .wishlist-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .wishlist-item-details {
+            flex: 1;
+        }
+        
+        .wishlist-item-remove {
+            color: #ef4444;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .wishlist-item-remove:hover {
+            transform: scale(1.1);
+        }
+         
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            width: fit-content;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9fafb;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s ease;
+        }
+        
+        .quantity-btn:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid #e5e7eb;
+            border-right: 1px solid #e5e7eb;
+            outline: none;
+        }
+        
+        .toast-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .toast {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .toast.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .toast-success {
+            border-left: 4px solid #10b981;
+        }
+        
+        .toast-error {
+            border-left: 4px solid #ef4444;
+        }
+        
+        .toast-info {
+            border-left: 4px solid #3b82f6;
+        }
+        
+         /* Product Details Modal */
+        .product-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .product-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .product-modal-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .product-modal.active .product-modal-container {
+            transform: translateY(0);
+            opacity: 1;
+        }
+       
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background-color: rgba(233, 221, 207, 0.2);
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: #846729;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 1rem 0;
+        }
+        .footer-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-link:hover {
+            color: #846729;
+            transform: translateX(5px);
+        }
+        
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #846729;
+        }
+        
+        .newsletter-input {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .newsletter-input:focus {
+            border-color: #785e26;
+            box-shadow: 0 0 0 3px rgba(0, 77, 26, 0.1);
+        }
+     
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #785e26;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #846729;
+            transform: translateY(-5px);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.5s ease-in-out forwards;
+        }
+        
+        .animate-slide-down {
+            animation: slideDown 0.5s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+   
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+      
+        @media (max-width: 768px) {
+            .carousel-container {
+                height: 70vh;
+            }
+            
+            .carousel-content {
+                background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+                align-items: center;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            .cart-sidebar {
+                width: 100%;
+            }
+        }
+          
+         .about-image {
+      box-shadow: 20px 20px 0px 0px rgba(197, 157, 95, 0.2);
+      transition: all 0.5s ease;
+      height: 100%;
+    }
+    
+    .about-image:hover {
+      box-shadow: 25px 25px 0px 0px rgba(197, 157, 95, 0.3);
+      transform: translate(-5px, -5px);
+    }
+    </style>
+</head>
+
+<body class="bg-white">
+    <div class="preloader">
+        <div class="flex flex-col items-center">
+            <div class="logo text-5xl text-primary mb-4">HerHair</div>
+            <div class="w-16 h-1 bg-primary relative overflow-hidden">
+                <div class="absolute top-0 left-0 h-full bg-secondary animate-pulse" style="width: 30%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for Mobile Menu -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 w-full py-6 px-4 md:px-10 flex justify-between items-center z-50 nav-transparent">
+        <!-- Logo -->
+        <a href="#" class="logo text-4xl text-white hover:opacity-80 transition-opacity">HerHair</a>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="md:hidden">
+            <button id="menu-toggle" aria-label="Toggle menu" class="text-white focus:outline-none">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+
+        <!-- Navigation Links (Desktop) -->
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link text-white hover:text-accent-light">Home</a>
+            <a href="#collections" class="nav-link text-white hover:text-accent-light">Collections</a>
+            <a href="#shop" class="nav-link text-white hover:text-accent-light">Shop</a>
+            <a href="#about" class="nav-link text-white hover:text-accent-light">About Us</a>
+            <a href="#hair-care" class="nav-link text-white hover:text-accent-light">Hair Care</a>
+            <a href="#contact" class="nav-link text-white hover:text-accent-light">Contact</a>
+        </div>
+
+        <!-- Right Icons (Desktop) -->
+        <div class="hidden md:flex space-x-6 items-center">
+            <a href="#" id="search-toggle" class="text-white hover:text-accent-light transition-colors" aria-label="Search">
+                <span class="material-icons">search</span>
+            </a>
+            <a href="#" id="account-toggle" class="text-white hover:text-accent-light transition-colors" aria-label="Account">
+                <span class="material-icons">person</span>
+            </a>
+            <a href="#" id="wishlist-toggle" class="text-white hover:text-accent-light transition-colors" aria-label="Wishlist">
+                <span class="material-icons">favorite_border</span>
+                <span id="wishlist-count" class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+            </a>
+            <a href="#" id="cart-toggle" class="text-white hover:text-accent-light transition-colors relative" aria-label="Cart">
+                <span class="material-icons">shopping_cart</span>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-xl z-50 mobile-menu">
+        <div class="flex flex-col h-full">
+            <div class="flex justify-between items-center p-6 border-b">
+                <div class="logo text-3xl text-primary">HerHair</div>
+                <button id="menu-close" aria-label="Close menu" class="text-gray-500 focus:outline-none">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto py-6 px-6">
+                <nav class="flex flex-col space-y-6">
+                    <a href="#home" class="text-lg font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
+                    <a href="#collections" class="text-lg font-medium text-gray-800 hover:text-primary transition-colors">Collections</a>
+                    <a href="#shop" class="text-lg font-medium text-gray-800 hover:text-primary transition-colors">Shop</a>
+                    <a href="#about" class="text-lg font-medium text-gray-800 hover:text-primary transition-colors">About Us</a>
+                    <a href="#hair-care" class="text-lg font-medium text-gray-800 hover:text-primary transition-colors">Hair Care</a>
+                    <a href="#contact" class="text-lg font-medium text-gray-800 hover:text-primary transition-colors">Contact</a>
+                </nav>
+                
+                <div class="mt-10 border-t pt-6">
+                    <div class="flex flex-col space-y-4">
+                        <button id="mobile-account-toggle" class="flex items-center text-gray-800 hover:text-primary transition-colors">
+                            <span class="material-icons mr-3">person</span>
+                            <span>My Account</span>
+                        </button>
+                        <button id="mobile-wishlist-toggle" class="flex items-center text-gray-800 hover:text-primary transition-colors">
+                            <span class="material-icons mr-3">favorite_border</span>
+                            <span>Wishlist</span>
+                            <span id="mobile-wishlist-count" class="ml-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                        </button>
+                        <button id="mobile-cart-toggle" class="flex items-center text-gray-800 hover:text-primary transition-colors">
+                            <span class="material-icons mr-3">shopping_cart</span>
+                            <span>Cart</span>
+                            <span id="mobile-cart-count" class="ml-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 border-t">
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay">
+        <button id="search-close" class="absolute top-8 right-8 text-gray-500 hover:text-primary transition-colors" aria-label="Close search">
+            <span class="material-icons text-3xl">close</span>
+        </button>
+        <div class="w-full max-w-4xl px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Search Our Products</h2>
+            <div class="relative">
+                <input type="text" id="search-input" class="search-input" placeholder="Type to search...">
+                <span class="material-icons absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">search</span>
+            </div>
+            <div id="search-results" class="search-results mt-8">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="flex justify-between items-center p-6 border-b">
+            <h2 class="text-2xl font-bold">Your Cart</h2>
+            <button id="cart-close" class="text-gray-500 hover:text-primary transition-colors" aria-label="Close cart">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        
+        <div id="cart-items" class="flex-1 overflow-y-auto">
+            <!-- Cart items will be populated here -->
+            <div class="flex flex-col items-center justify-center h-full text-gray-500 p-6">
+                <span class="material-icons text-5xl mb-4">shopping_cart</span>
+                <p class="text-center">Your cart is empty</p>
+                <p class="text-center text-sm mt-2">Add some products to your cart</p>
+            </div>
+        </div>
+        
+        <div class="p-6 border-t">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-gray-600">Subtotal</span>
+                <span id="cart-subtotal" class="font-semibold">$0.00</span>
+            </div>
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-gray-600">Shipping</span>
+                <span id="cart-shipping" class="font-semibold">$0.00</span>
+            </div>
+            <div class="flex justify-between items-center text-lg font-bold mb-6">
+                <span>Total</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="checkout-btn" class="w-full btn-primary py-3 rounded-md font-medium">Proceed to Checkout</button>
+            <button id="continue-shopping" class="w-full btn-outline py-3 rounded-md font-medium mt-4">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="auth-modal">
+        <div class="auth-container">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">My Account</h2>
+                <button id="auth-close" class="text-gray-500 hover:text-primary transition-colors" aria-label="Close">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            
+            <div class="auth-tabs">
+                <div class="auth-tab active" data-tab="login">Login</div>
+                <div class="auth-tab" data-tab="register">Register</div>
+            </div>
+            
+            <div id="login-form" class="auth-form active">
+                <form id="login-form-element">
+                    <div class="mb-4">
+                        <label for="login-email" class="block text-gray-700 mb-2">Email Address</label>
+                        <input type="email" id="login-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="login-password" class="block text-gray-700 mb-2">Password</label>
+                        <input type="password" id="login-password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required>
+                    </div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="remember-me" class="mr-2">
+                            <label for="remember-me" class="text-gray-600">Remember me</label>
+                        </div>
+                        <a href="#" class="text-primary hover:underline">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="w-full btn-primary py-3 rounded-md font-medium">Login</button>
+                </form>
+            </div>
+            
+            <div id="register-form" class="auth-form">
+                <form id="register-form-element">
+                    <div class="mb-4">
+                        <label for="register-name" class="block text-gray-700 mb-2">Full Name</label>
+                        <input type="text" id="register-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-email" class="block text-gray-700 mb-2">Email Address</label>
+                        <input type="email" id="register-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-password" class="block text-gray-700 mb-2">Password</label>
+                        <input type="password" id="register-password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="register-confirm-password" class="block text-gray-700 mb-2">Confirm Password</label>
+                        <input type="password" id="register-confirm-password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <input type="checkbox" id="terms" class="mr-2" required>
+                        <label for="terms" class="text-gray-600">I agree to the <a href="#" class="text-primary hover:underline">Terms & Conditions</a></label>
+                    </div>
+                    <button type="submit" class="w-full btn-primary py-3 rounded-md font-medium">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+  
+    <div id="wishlist-sidebar" class="cart-sidebar">
+        <div class="flex justify-between items-center p-6 border-b">
+            <h2 class="text-2xl font-bold">Your Wishlist</h2>
+            <button id="wishlist-close" class="text-gray-500 hover:text-primary transition-colors" aria-label="Close wishlist">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        
+        <div id="wishlist-items" class="flex-1 overflow-y-auto">
+            <div class="flex flex-col items-center justify-center h-full text-gray-500 p-6">
+                <span class="material-icons text-5xl mb-4">favorite_border</span>
+                <p class="text-center">Your wishlist is empty</p>
+                <p class="text-center text-sm mt-2">Add products to your wishlist</p>
+            </div>
+        </div>
+        
+        <div class="p-6 border-t">
+            <button id="continue-shopping-wishlist" class="w-full btn-outline py-3 rounded-md font-medium">Continue Shopping</button>
+        </div>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+
+   
+    <div id="product-modal" class="product-modal">
+        <div class="product-modal-container p-0">
+            <button id="product-modal-close" class="absolute top-4 right-4 z-10 text-gray-500 hover:text-primary transition-colors" aria-label="Close">
+                <span class="material-icons text-2xl">close</span>
+            </button>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2">
+
+                <div class="bg-gray-100 p-8">
+                    <div id="product-modal-image-container" class="h-96 overflow-hidden rounded-lg mb-4">
+                        <img id="product-modal-image" src="/placeholder.svg" alt="Product" class="w-full h-full object-cover">
+                    </div>
+                    <div id="product-modal-thumbnails" class="flex gap-2 overflow-x-auto">
+                    </div>
+                </div>
+                
+                <div class="p-8">
+                    <div class="mb-2 flex items-center">
+                        <span id="product-modal-badge" class="bg-primary text-white text-xs font-medium px-2 py-1 rounded mr-2"></span>
+                        <div class="flex items-center">
+                            <span class="text-yellow-400 mr-1">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span id="product-modal-rating" class="text-sm font-medium">4.9</span>
+                            <span class="text-sm text-gray-500 ml-1">(<span id="product-modal-reviews">24</span> reviews)</span>
+                        </div>
+                    </div>
+                    
+                    <h2 id="product-modal-title" class="text-2xl font-bold mb-2"></h2>
+                    <p id="product-modal-description" class="text-gray-600 mb-4"></p>
+                    
+                    <div class="flex items-center mb-6">
+                        <span id="product-modal-price" class="text-2xl font-bold"></span>
+                        <span id="product-modal-compare-price" class="text-gray-500 line-through ml-2 hidden"></span>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-2">Color</h3>
+                        <div id="product-modal-colors" class="flex items-center gap-2">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-2">Quantity</h3>
+                        <div class="quantity-selector">
+                            <div class="quantity-btn" id="decrease-quantity">-</div>
+                            <input type="number" id="product-modal-quantity" class="quantity-input" value="1" min="1" max="10">
+                            <div class="quantity-btn" id="increase-quantity">+</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 mb-6">
+                        <button id="product-modal-add-to-cart" class="flex-1 btn-primary py-3 rounded-md font-medium">Add to Cart</button>
+                        <button id="product-modal-add-to-wishlist" class="w-12 h-12 rounded-md border border-gray-300 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+                            <span class="material-icons">favorite_border</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Carousel Section -->
+    <section id="home" class="carousel-container">
+        <div class="carousel-slide active">
+            <img src="Untitled design (1).png" alt="Luxury Hair Extensions" class="carousel-image">
+            <div class="carousel-content">
+                <div class="container mx-auto max-w-4xl">
+                    <span class="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase rounded-full bg-white text-primary mb-4 animate-fade-in">Premium Collection</span>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slide-up">Enhance Your Beauty With <br><span class="text-accent">Luxury Hair</span></h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-xl animate-slide-up" style="animation-delay: 0.1s;">Discover our handcrafted premium hair extensions and wigs designed to enhance your natural beauty and boost your confidence.</p>
+                    <div class="flex flex-wrap gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+                        <a href="#shop" class="btn-primary px-8 py-3 rounded-md font-medium">Shop Collection</a>
+                        <a href="#consultation" class="btn-outline px-8 py-3 rounded-md font-medium bg-white bg-opacity-20 backdrop-blur-sm">Book Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="Untitled design (2).png" alt="Premium Hair Products" class="carousel-image">
+            <div class="carousel-content">
+                <div class="container mx-auto max-w-4xl">
+                    <span class="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase rounded-full bg-white text-primary mb-4 animate-fade-in">New Arrivals</span>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slide-up">Transform Your Look With <br><span class="text-accent">Premium Hair</span></h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-xl animate-slide-up" style="animation-delay: 0.1s;">Experience the luxury of our high-quality hair products that look and feel natural.</p>
+                    <div class="flex flex-wrap gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+                        <a href="#new-arrivals" class="btn-primary px-8 py-3 rounded-md font-medium">View New Arrivals</a>
+                        <a href="#hair-quiz" class="btn-outline px-8 py-3 rounded-md font-medium bg-white bg-opacity-20 backdrop-blur-sm">Take Hair Quiz</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+            <img src="Untitled design (3).png" alt="Hair Styling Services" class="carousel-image">
+            <div class="carousel-content">
+                <div class="container mx-auto max-w-4xl">
+                    <span class="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase rounded-full bg-white text-primary mb-4 animate-fade-in">Expert Services</span>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slide-up">Professional Styling <br><span class="text-accent">Just For You</span></h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-xl animate-slide-up" style="animation-delay: 0.1s;">Our expert stylists will help you find the perfect look to express your unique beauty.</p>
+                    <div class="flex flex-wrap gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+                        <a href="#services" class="btn-primary px-8 py-3 rounded-md font-medium">Explore Services</a>
+                        <a href="#appointment" class="btn-outline px-8 py-3 rounded-md font-medium bg-white bg-opacity-20 backdrop-blur-sm">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carousel Navigation Dots -->
+        <div class="carousel-dots">
+            <div class="carousel-dot active" data-slide="0"></div>
+            <div class="carousel-dot" data-slide="1"></div>
+            <div class="carousel-dot" data-slide="2"></div>
+        </div>
+    </section>
+
+    <!-- Marquee Banner -->
+    <div class="bg-accent py-3 overflow-hidden">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">EXPERIENCE THE ULTIMATE LUXURY HAIR</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">INDULGE IN THE PINNACLE OF LUXURY HAIR CARE</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">DISCOVER THE ULTIMATE EXPERIENCE IN HAIR LUXURY</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">UNLEASH THE FULL POTENTIAL OF PREMIUM HAIR CARE</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">EXPERIENCE UNMATCHED QUALITY IN HAIR LUXURY</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">ELEVATE YOUR HAIR CARE TO AN EXQUISITE LEVEL</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">EXPERIENCE THE ULTIMATE LUXURY HAIR</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">INDULGE IN THE PINNACLE OF LUXURY HAIR CARE</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">DISCOVER THE ULTIMATE EXPERIENCE IN HAIR LUXURY</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">UNLEASH THE FULL POTENTIAL OF PREMIUM HAIR CARE</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">EXPERIENCE UNMATCHED QUALITY IN HAIR LUXURY</span>
+                <span class="mx-4 text-primary font-medium uppercase tracking-wider">ELEVATE YOUR HAIR CARE TO AN EXQUISITE LEVEL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Collections Section -->
+    <section id="collections" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Signature Hair Collections</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our premium quality hair units designed to transform your look with effortless elegance and natural beauty.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Sleek Bobs -->
+                <div class="collection-card rounded-xl overflow-hidden bg-white h-[400px] md:h-[450px] shadow-soft">
+                    <div class="h-full relative">
+                        <img src="IMG-20220213-WA0011.webp" alt="Bob Units" class="w-full h-full object-cover">
+                        <div class="collection-overlay">
+                            <h3 class="text-white text-2xl font-semibold mb-2">Sleek Bobs</h3>
+                            <p class="collection-description text-gray-200 text-sm">Classic, sophisticated bob styles for a timeless, polished look.</p>
+                            <a href="#shop-bobs" class="mt-4 inline-block text-accent hover:text-white transition-colors">Explore Collection →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Glam Curls -->
+                <div class="collection-card rounded-xl overflow-hidden bg-white h-[400px] md:h-[450px] shadow-soft">
+                    <div class="h-full relative">
+                        <img src="IMG-8160.webp" alt="Bouncy Units" class="w-full h-full object-cover">
+                        <div class="collection-overlay">
+                            <h3 class="text-white text-2xl font-semibold mb-2">Glam Curls</h3>
+                            <p class="collection-description text-gray-200 text-sm">Voluminous, bouncy curls that add dimension and movement.</p>
+                            <a href="#shop-curls" class="mt-4 inline-block text-accent hover:text-white transition-colors">Explore Collection →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sleek Straight -->
+                <div class="collection-card rounded-xl overflow-hidden bg-white h-[400px] md:h-[450px] shadow-soft">
+                    <div class="h-full relative">
+                        <img src="F758CB1E-9D7C-4AA8-BA4C-EDED38AA243B.webp" alt="Straight Units" class="w-full h-full object-cover">
+                        <div class="collection-overlay">
+                            <h3 class="text-white text-2xl font-semibold mb-2">Sleek Straight</h3>
+                            <p class="collection-description text-gray-200 text-sm">Silky smooth, straight styles for an elegant, refined appearance.</p>
+                            <a href="#shop-straight" class="mt-4 inline-block text-accent hover:text-white transition-colors">Explore Collection →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fluffy Curls -->
+                <div class="collection-card rounded-xl overflow-hidden bg-white h-[400px] md:h-[450px] shadow-soft">
+                    <div class="h-full relative">
+                        <img src="WhatsAppImage2024-03-17at08.25.13.webp" alt="Curly Units" class="w-full h-full object-cover">
+                        <div class="collection-overlay">
+                            <h3 class="text-white text-2xl font-semibold mb-2">Fluffy Curls</h3>
+                            <p class="collection-description text-gray-200 text-sm">Soft, defined curls that create a natural, effortless look.</p>
+                            <a href="#shop-fluffy" class="mt-4 inline-block text-accent hover:text-white transition-colors">Explore Collection →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#shop-all" class="btn-primary px-8 py-3 rounded-md font-medium inline-block">View All Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="shop" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Best Sellers</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our most popular premium hair products loved by customers worldwide.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-soft" data-product-id="1">
+                    <div class="product-image-container h-64 relative">
+                        <img src="C3384B05-7F70-40EB-94A0-67619ECFAE9F.webp" alt="Silky Straight Wig" class="product-image w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <button class="add-to-wishlist w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors" aria-label="Add to wishlist" data-product-id="1">
+                                <span class="material-icons text-xl">favorite_border</span>
+                            </button>
+                            <button class="quick-view w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors" aria-label="Quick view" data-product-id="1">
+                                <span class="material-icons text-xl">visibility</span>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white text-xs font-medium px-2 py-1 rounded">BEST SELLER</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-semibold">Silky Straight Lace Front</h3>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400 mr-1">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="text-sm font-medium">4.9</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">20" Human Hair Wig with HD Lace</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="color-swatch bg-[#1a1a1a] active" data-color="Jet Black" data-product-id="1"></div>
+                                <div class="color-swatch bg-[#4a2c1d]" data-color="Dark Brown" data-product-id="1"></div>
+                                <div class="color-swatch bg-[#8c5e2b]" data-color="Auburn" data-product-id="1"></div>
+                                <span class="text-xs text-gray-500">+2</span>
+                            </div>
+                            <div class="text-lg font-semibold">R2999</div>
+                        </div>
+                        <button class="add-to-cart w-full mt-4 btn-primary py-3 rounded-md font-medium" data-product-id="1">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-soft" data-product-id="2">
+                    <div class="product-image-container h-64 relative">
+                        <img src="IMG-8160.webp" alt="Body Wave Wig" class="product-image w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <button class="add-to-wishlist w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors" aria-label="Add to wishlist" data-product-id="2">
+                                <span class="material-icons text-xl">favorite_border</span>
+                            </button>
+                            <button class="quick-view w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors" aria-label="Quick view" data-product-id="2">
+                                <span class="material-icons text-xl">visibility</span>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-secondary text-white text-xs font-medium px-2 py-1 rounded">NEW</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-semibold">Body Wave Bundle</h3>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400 mr-1">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="text-sm font-medium">4.8</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">3 Bundles with Closure, 18"-20"-22"</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="color-swatch bg-[#1a1a1a] active" data-color="Jet Black" data-product-id="2"></div>
+                                <div class="color-swatch bg-[#4a2c1d]" data-color="Dark Brown" data-product-id="2"></div>
+                                <div class="color-swatch bg-[#8c5e2b]" data-color="Auburn" data-product-id="2"></div>
+                                <span class="text-xs text-gray-500">+2</span>
+                            </div>
+                            <div class="text-lg font-semibold">R3500</div>
+                        </div>
+                        <button class="add-to-cart w-full mt-4 btn-primary py-3 rounded-md font-medium" data-product-id="2">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-soft" data-product-id="3">
+                    <div class="product-image-container h-64 relative">
+                        <img src="4BA7B8AA-6B30-4F8C-AFF7-B2CE82756368.webp" alt="Bob Wig" class="product-image w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <button class="add-to-wishlist w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors" aria-label="Add to wishlist" data-product-id="3">
+                                <span class="material-icons text-xl">favorite_border</span>
+                            </button>
+                            <button class="quick-view w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors" aria-label="Quick view" data-product-id="3">
+                                <span class="material-icons text-xl">visibility</span>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white text-xs font-medium px-2 py-1 rounded">BEST SELLER</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-semibold">Sleek Bob Wig</h3>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400 mr-1">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="text-sm font-medium">4.7</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">12" Human Hair Bob with Bangs</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="color-swatch bg-[#1a1a1a] active" data-color="Jet Black" data-product-id="3"></div>
+                                <div class="color-swatch bg-[#4a2c1d]" data-color="Dark Brown" data-product-id="3"></div>
+                                <div class="color-swatch bg-[#8c5e2b]" data-color="Auburn" data-product-id="3"></div>
+                                <span class="text-xs text-gray-500">+2</span>
+                            </div>
+                            <div class="text-lg font-semibold">R1650</div>
+                        </div>
+                        <button class="add-to-cart w-full mt-4 btn-primary py-3 rounded-md font-medium" data-product-id="3">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-soft" data-product-id="4">
+                    <div class="product-image-container h-64 relative">
+                        <img src="image_05f0dcb3-5cac-44be-9228-5d2d6fdc269a.jpg" alt="Curly Wig" class="product-image w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <button class="add-to-wishlist w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors" aria-label="Add to wishlist" data-product-id="4">
+                                <span class="material-icons text-xl">favorite_border</span>
+                            </button>
+                            <button class="quick-view w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors" aria-label="Quick view" data-product-id="4">
+                                <span class="material-icons text-xl">visibility</span>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-red-500 text-white text-xs font-medium px-2 py-1 rounded">SALE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-semibold">Curly Texture Wig</h3>
+                            <div class="flex items-center">
+                                <span class="text-yellow-400 mr-1">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="text-sm font-medium">4.9</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">18" Human Hair with 360° Lace</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="color-swatch bg-[#1a1a1a] active" data-color="Jet Black" data-product-id="4"></div>
+                                <div class="color-swatch bg-[#4a2c1d]" data-color="Dark Brown" data-product-id="4"></div>
+                                <div class="color-swatch bg-[#8c5e2b]" data-color="Auburn" data-product-id="4"></div>
+                                <span class="text-xs text-gray-500">+2</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-lg font-semibold">R4000</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">R5000</span>
+                            </div>
+                        </div>
+                        <button class="add-to-cart w-full mt-4 btn-primary py-3 rounded-md font-medium" data-product-id="4">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#shop-all" class="btn-outline px-8 py-3 rounded-md font-medium inline-block">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!--What we offer-->
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 dark:bg-gray-100 dark:text-gray-800" style="background-color: #f3eade;">
+        <h2 class="mb-8 text-4xl font-bold leading-none text-center">What do we have to offer?</h2>
+        <ul class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-[#785e26]">
+                    <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+                    <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+                </svg>
+                <span>Expert styling services tailored to your needs.</span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-[#785e26]">
+                    <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+                    <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+                </svg>
+                <span>High-quality hair extensions for every style.</span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-[#785e26]">
+                    <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+                    <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+                </svg>
+                <span>Premium wigs for a natural look and feel.</span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-[#785e26]">
+                    <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+                    <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+                </svg>
+                <span>Professional hair treatments for healthy, vibrant hair.</span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-[#785e26]">
+                    <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+                    <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+                </svg>
+                <span>Luxurious hair care products to nourish and protect your hair.</span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-[#785e26]">
+                    <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+                    <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+                </svg>
+                <span>A wide range of accessories to complement your look.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Customer Testimonials</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear what our satisfied customers have to say about their HerHair experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-light p-8 rounded-lg shadow-soft">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm font-medium">5.0</span>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">
+                        "I am beyond impressed with my purchase from HerHair! The wig is incredibly soft, tangle-free, and has a natural shine. It blends seamlessly, and I've received so many compliments. Definitely my go-to brand from now on!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-27%20104726-tSog1IGyFZeoTN5CdxPtnJYlK65DxE.png" alt="Jessica M" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-semibold">Jessica M.</p>
+                            <p class="text-sm text-gray-500">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-light p-8 rounded-lg shadow-soft">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm font-medium">5.0</span>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">
+                        "The lace is literally undetectable, and the hairline looks so natural! It melts perfectly into my skin, and the hair is thick from root to tip. I'm obsessed with how versatile this unit is - I can style it in so many ways!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-27%20104726-tSog1IGyFZeoTN5CdxPtnJYlK65DxE.png" alt="Samantha L" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-semibold">Samantha L.</p>
+                            <p class="text-sm text-gray-500">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-light p-8 rounded-lg shadow-soft">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="ml-2 text-sm font-medium">4.5</span>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">
+                        "After trying several brands, I finally found HerHair and I couldn't be happier! The quality is exceptional, and their customer service team was so helpful in helping me choose the right style. The hair holds curls beautifully and looks so natural."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-27%20104726-tSog1IGyFZeoTN5CdxPtnJYlK65DxE.png" alt="Michelle K" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-semibold">Michelle K.</p>
+                            <p class="text-sm text-gray-500">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#all-reviews" class="btn-outline px-8 py-3 rounded-md font-medium inline-block">Read More Reviews</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                <!-- Image Column -->
+                <div class="w-full md:w-1/2 order-2 md:order-1">
+                    <div class="relative">
+                        <img 
+                        src="me.jpg" 
+                        alt="Founder of HerHair" 
+                        class="about-image w-3/4 h-auto rounded-lg object-cover"
+                        >
+                    </div>
+                </div>
+                
+                <!-- Content Column -->
+                <div class="w-full md:w-1/2 order-1 md:order-2">
+                    <h4 class="text-sm uppercase tracking-widest mb-2 text-gray-500">About Our Brand</h4>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">The Face of <span class="text-primary">HerHair</span></h2>
+                    <div class="w-16 h-1 bg-primary mb-6"></div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Founded with a passion for empowering women through confidence-boosting hair solutions, HerHair has become synonymous with quality, innovation, and natural beauty.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our journey began when our founder, Charlee Watkins, experienced her own hair transformation journey and realized the profound impact that premium quality hair units could have on a woman's self-esteem and personal expression.
+                    </p>
+                    <blockquote class="border-l-4 border-primary pl-4 italic text-gray-700 mb-6">
+                        "Every woman deserves to feel beautiful and confident in her own unique way. Our mission is to provide hair solutions that feel as natural as they look, allowing your true personality to shine through."
+                    </blockquote>
+                    <p class="font-semibold text-lg">Charlee Watkins</p>
+                    <p class="text-sm text-gray-500 mb-6">Founder & Creative Director</p>
+                    
+                    <a href="#our-story" class="btn-outline px-6 py-2 rounded-md font-medium inline-block">Read Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find answers to common questions about our products and services.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item py-4">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-xl font-semibold">What types of hair products do you offer?</h3>
+                        <span class="material-icons text-gray-500 transition-transform transform rotate-0">add</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">At HerHair, we specialize in high-quality hair extensions, wigs, and accessories. Our products are designed to enhance your natural beauty while providing versatility and style. We offer a wide range of textures, lengths, and colors to suit every preference.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item py-4">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-xl font-semibold">How do I choose the right hair for me?</h3>
+                        <span class="material-icons text-gray-500 transition-transform transform rotate-0">add</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">Choosing the right hair depends on your personal style, hair type, and desired look. We recommend considering factors such as texture, length, and color. Our customer service team is available to help you find the perfect match through personalized consultations.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item py-4">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-xl font-semibold">Are your products ethically sourced?</h3>
+                        <span class="material-icons text-gray-500 transition-transform transform rotate-0">add</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">Yes! At HerHair, we are committed to ethical sourcing practices. We ensure that all our hair products are obtained responsibly and with respect for the communities involved. We maintain strict standards throughout our supply chain.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item py-4">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-xl font-semibold">How do I care for my hair extensions or wig?</h3>
+                        <span class="material-icons text-gray-500 transition-transform transform rotate-0">add</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">We recommend using sulfate-free, gentle shampoos and conditioners specifically formulated for human hair extensions or wigs. Wash in lukewarm water, avoid excessive heat styling, and store properly when not in use. Each product comes with detailed care instructions tailored to that specific hair type.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item py-4">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-xl font-semibold">What makes HerHair different from other hair brands?</h3>
+                        <span class="material-icons text-gray-500 transition-transform transform rotate-0">add</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">HerHair stands out for its commitment to quality, affordability, and authenticity. Our products are designed with the modern, confident woman in mind, celebrating the beauty and strength of diverse hair types. We provide personalized consultations, custom styling options, and exceptional customer service throughout your hair journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions or need assistance? We're here to help. Reach out to our team for personalized support.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-lg shadow-soft">
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary px-8 py-3 rounded-md font-medium">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-soft mb-8">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="material-icons text-primary mr-4">location_on</span>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Address</h4>
+                                    <p class="text-gray-600">123 Hair Street, Kimberley, Northern Cape, South Africa</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-primary mr-4">phone</span>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Phone</h4>
+                                    <p class="text-gray-600">+27 672 5111</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-primary mr-4">email</span>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-gray-600">herhair@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-primary mr-4">schedule</span>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Business Hours</h4>
+                                    <p class="text-gray-600">Monday - Saturday: 8:00 AM - 5:00 PM</p>
+                                    <p class="text-gray-600">Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-soft">
+                        <h3 class="text-2xl font-bold mb-6">Follow Us</h3>
+                        <p class="text-gray-600 mb-4">Stay connected with us on social media for the latest updates, styling tips, and promotions.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Stay in the Loop</h2>
+                    <p class="text-accent-light text-lg">Subscribe to our newsletter for exclusive deals, styling tips, and new product announcements.</p>
+                </div>
+                <div class="md:w-1/2 w-full max-w-md">
+                    <form class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input flex-grow px-4 py-3 rounded-md focus:outline-none" required>
+                        <button type="submit" class="bg-secondary hover:bg-secondary-light text-white font-medium px-6 py-3 rounded-md transition-colors">Subscribe</button>
+                    </form>
+                    <p class="text-accent text-sm mt-3">By subscribing, you agree to receive marketing emails from HerHair. You can unsubscribe at any time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-accent-light text-gray-800">
+        <!-- Main Footer -->
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="logo text-4xl text-primary mb-4">HerHair</div>
+                    <p class="text-gray-600 mb-6">Premium quality hair products designed to enhance your natural beauty and boost your confidence.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon text-gray-600" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-600" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-600" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-600" aria-label="TikTok">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="footer-link text-gray-600">Home</a></li>
+                        <li><a href="#shop" class="footer-link text-gray-600">Shop</a></li>
+                        <li><a href="#about" class="footer-link text-gray-600">About Us</a></li>
+                        <li><a href="#contact" class="footer-link text-gray-600">Contact</a></li>
+                        <li><a href="#blog" class="footer-link text-gray-600">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Collections -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Collections</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#bobs" class="footer-link text-gray-600">Sleek Bobs</a></li>
+                        <li><a href="#curls" class="footer-link text-gray-600">Glam Curls</a></li>
+                        <li><a href="#straight" class="footer-link text-gray-600">Sleek Straight</a></li>
+                        <li><a href="#fluffy" class="footer-link text-gray-600">Fluffy Curls</a></li>
+                        <li><a href="#new" class="footer-link text-gray-600">New Arrivals</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="material-icons text-primary mr-3 mt-1">schedule</span>
+                            <span class="text-gray-600">Monday - Saturday: 8:00 AM - 5:00 PM</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-primary mr-3 mt-1">phone</span>
+                            <span class="text-gray-600">+27 672 5111</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-primary mr-3 mt-1">email</span>
+                            <span class="text-gray-600">herhair@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-primary mr-3 mt-1">location_on</span>
+                            <span class="text-gray-600">Kimberley, Northern Cape</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Footer -->
+        <div class="border-t border-gray-200">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-600 mb-4 md:mb-0">&copy; 2025 HerHair. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#terms" class="text-gray-600 hover:text-primary transition-colors">Terms & Conditions</a>
+                        <a href="#privacy" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a>
+                        <a href="#shipping" class="text-gray-600 hover:text-primary transition-colors">Shipping Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <span class="material-icons">keyboard_arrow_up</span>
+    </button>
+
+    <script>
+        
+        const products = [
+            {
+                id: 1,
+                name: "Silky Straight Lace Front",
+                description: "20\" Human Hair Wig with HD Lace. This premium wig features 100% human hair with a natural hairline and comfortable fit for all-day wear.",
+                price: 299.99,
+                comparePrice: null,
+                rating: 4.9,
+                reviews: 24,
+                badge: "BEST SELLER",
+                colors: [
+                    { name: "Jet Black", code: "#1a1a1a" },
+                    { name: "Dark Brown", code: "#4a2c1d" },
+                    { name: "Auburn", code: "#8c5e2b" },
+                    { name: "Natural Black", code: "#2c2c2c" },
+                    { name: "Honey Blonde", code: "#c6a97c" }
+                ],
+                images: [
+                    "C3384B05-7F70-40EB-94A0-67619ECFAE9F.webp",
+                    "C3384B05-7F70-40EB-94A0-67619ECFAE9F.webp",
+                    "C3384B05-7F70-40EB-94A0-67619ECFAE9F.webp"
+                ],
+                category: "Wigs",
+                collection: "Sleek Straight"
+            },
+            {
+                id: 2,
+                name: "Body Wave Bundle",
+                description: "3 Bundles with Closure, 18\"-20\"-22\". These premium bundles feature 100% human hair with a natural wave pattern that adds volume and movement.",
+                price: 249.99,
+                comparePrice: null,
+                rating: 4.8,
+                reviews: 18,
+                badge: "NEW",
+                colors: [
+                    { name: "Jet Black", code: "#1a1a1a" },
+                    { name: "Dark Brown", code: "#4a2c1d" },
+                    { name: "Auburn", code: "#8c5e2b" },
+                    { name: "Natural Black", code: "#2c2c2c" },
+                    { name: "Honey Blonde", code: "#c6a97c" }
+                ],
+                images: [
+                    "IMG-8160.webp",
+                    "IMG-8160.webp",
+                    "IMG-8160.webp"
+                ],
+                category: "Bundles",
+                collection: "Glam Curls"
+            },
+            {
+                id: 3,
+                name: "Sleek Bob Wig",
+                description: "12\" Human Hair Bob with Bangs. This chic bob features 100% human hair with a sleek, straight texture and face-framing bangs for a sophisticated look.",
+                price: 189.99,
+                comparePrice: null,
+                rating: 4.7,
+                reviews: 15,
+                badge: "BEST SELLER",
+                colors: [
+                    { name: "Jet Black", code: "#1a1a1a" },
+                    { name: "Dark Brown", code: "#4a2c1d" },
+                    { name: "Auburn", code: "#8c5e2b" },
+                    { name: "Natural Black", code: "#2c2c2c" },
+                    { name: "Honey Blonde", code: "#c6a97c" }
+                ],
+                images: [
+                    "4BA7B8AA-6B30-4F8C-AFF7-B2CE82756368.webp",
+                    "4BA7B8AA-6B30-4F8C-AFF7-B2CE82756368.webp",
+                    "4BA7B8AA-6B30-4F8C-AFF7-B2CE82756368.webp"
+                ],
+                category: "Wigs",
+                collection: "Sleek Bobs"
+            },
+            {
+                id: 4,
+                name: "Curly Texture Wig",
+                description: "18\" Human Hair with 360° Lace. This versatile wig features 100% human hair with defined curls and a 360° lace frontal for styling flexibility.",
+                price: 229.99,
+                comparePrice: 279.99,
+                rating: 4.9,
+                reviews: 22,
+                badge: "SALE",
+                colors: [
+                    { name: "Jet Black", code: "#1a1a1a" },
+                    { name: "Dark Brown", code: "#4a2c1d" },
+                    { name: "Auburn", code: "#8c5e2b" },
+                    { name: "Natural Black", code: "#2c2c2c" },
+                    { name: "Honey Blonde", code: "#c6a97c" }
+                ],
+                images: [
+                    "image_05f0dcb3-5cac-44be-9228-5d2d6fdc269a.jpg",
+                    "image_05f0dcb3-5cac-44be-9228-5d2d6fdc269a.jpg",
+                    "image_05f0dcb3-5cac-44be-9228-5d2d6fdc269a.jpg"
+                ],
+                category: "Wigs",
+                collection: "Fluffy Curls"
+            }
+        ];
+
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(function() {
+                preloader.classList.add('hidden');
+            }, 500);
+        });
+        
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        menuClose.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+        
+        const navbar = document.getElementById('main-nav');
+        const navbarLogo = navbar.querySelector('.logo');
+        const navLinks = navbar.querySelectorAll('.nav-link');
+        const navIcons = navbar.querySelectorAll('.material-icons');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('nav-transparent');
+                navbarLogo.classList.remove('text-white');
+                navbarLogo.classList.add('text-primary');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-gray-800');
+                    link.classList.add('hover:text-primary');
+                    link.classList.remove('hover:text-accent-light');
+                });
+                
+                navIcons.forEach(icon => {
+                    icon.classList.remove('text-white');
+                    icon.classList.add('text-gray-800');
+                });
+            } else {
+                navbar.classList.remove('nav-scrolled');
+                navbar.classList.add('nav-transparent');
+                navbarLogo.classList.add('text-white');
+                navbarLogo.classList.remove('text-primary');
+                
+                navLinks.forEach(link => {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-gray-800');
+                    link.classList.remove('hover:text-primary');
+                    link.classList.add('hover:text-accent-light');
+                });
+                
+                navIcons.forEach(icon => {
+                    icon.classList.add('text-white');
+                    icon.classList.remove('text-gray-800');
+                });
+            }
+        });
+        
+        
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentSlide = 0;
+        let slideInterval;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+        }
+        
+        startSlideshow();
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                stopSlideshow();
+                startSlideshow();
+            });
+        });
+        
+        const colorSwatches = document.querySelectorAll('.color-swatch');
+        
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', function() {
+               
+                const productId = this.getAttribute('data-product-id');
+                const swatches = document.querySelectorAll(`.color-swatch[data-product-id="${productId}"]`);
+                
+                swatches.forEach(s => s.classList.remove('active'));
+                
+                this.classList.add('active');
+                
+                const colorName = this.getAttribute('data-color');
+                console.log(`Selected color: ${colorName} for product ID: ${productId}`);
+            });
+        });
+        
+     
+        const searchToggle = document.getElementById('search-toggle');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        
+        searchToggle.addEventListener('click', function() {
+            searchOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                searchInput.focus();
+            }, 300);
+        });
+        
+        searchClose.addEventListener('click', function() {
+            searchOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            searchInput.value = '';
+            searchResults.innerHTML = '';
+        });
+        
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            
+            if (query.length < 2) {
+                searchResults.innerHTML = '';
+                return;
+            }
+            
+            const results = products.filter(product => 
+                product.name.toLowerCase().includes(query) || 
+                product.description.toLowerCase().includes(query) ||
+                product.category.toLowerCase().includes(query) ||
+                product.collection.toLowerCase().includes(query)
+            );
+            
+           
+            if (results.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-gray-500">No products found for "${query}"</p>
+                    </div>
+                `;
+            } else {
+                searchResults.innerHTML = `
+                    <h3 class="text-lg font-semibold mb-4">Search Results (${results.length})</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        ${results.map(product => `
+                            <div class="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" onclick="openProductModal(${product.id})">
+                                <img src="${product.images[0]}" alt="${product.name}" class="w-16 h-16 object-cover rounded-md mr-4">
+                                <div>
+                                    <h4 class="font-medium">${product.name}</h4>
+                                    <p class="text-sm text-gray-500">${product.category}</p>
+                                    <p class="text-primary font-semibold">$${product.price.toFixed(2)}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+        });
+        
+    
+        const cartToggle = document.getElementById('cart-toggle');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartClose = document.getElementById('cart-close');
+        const cartItems = document.getElementById('cart-items');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartShipping = document.getElementById('cart-shipping');
+        const cartTotal = document.getElementById('cart-total');
+        const cartCount = document.getElementById('cart-count');
+        const mobileCartCount = document.getElementById('mobile-cart-count');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const continueShopping = document.getElementById('continue-shopping');
+        
+        
+        document.getElementById('mobile-cart-toggle').addEventListener('click', function() {
+            openCart();
+            closeMenu();
+        });
+        
+        cartToggle.addEventListener('click', openCart);
+        
+        function openCart() {
+            cartSidebar.classList.add('active');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            updateCart();
+        }
+        
+        cartClose.addEventListener('click', closeCart);
+        
+        function closeCart() {
+            cartSidebar.classList.remove('active');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        continueShopping.addEventListener('click', closeCart);
+        
+        checkoutBtn.addEventListener('click', function() {
+            if (getCart().length === 0) {
+                showToast('Your cart is empty', 'error');
+                return;
+            }
+            
+            showToast('Proceeding to checkout...', 'success');
+            
+            setTimeout(() => {
+                alert('This would redirect to the checkout page in a real implementation.');
+            }, 1000);
+        });
+        
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = parseInt(this.getAttribute('data-product-id'));
+                const product = products.find(p => p.id === productId);
+                
+                if (product) {
+                    addToCart(product);
+                    showToast(`${product.name} added to cart`, 'success');
+                }
+            });
+        });
+        
+        function addToCart(product, quantity = 1, color = 'Jet Black') {
+            let cart = getCart();
+            const existingItemIndex = cart.findIndex(item => 
+                item.id === product.id && item.color === color
+            );
+            
+            if (existingItemIndex !== -1) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+              
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.images[0],
+                    quantity: quantity,
+                    color: color
+                });
+            }
+            
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            
+            updateCartCount();
+        }
+        
+        function removeFromCart(index) {
+            let cart = getCart();
+            
+            if (index >= 0 && index < cart.length) {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+                updateCartCount();
+            }
+        }
+        
+        function updateCartCount() {
+            const cart = getCart();
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            
+            if (count > 0) {
+                cartCount.textContent = count;
+                cartCount.classList.remove('hidden');
+                
+                mobileCartCount.textContent = count;
+                mobileCartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+                mobileCartCount.classList.add('hidden');
+            }
+        }
+        
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+        
+        function updateCart() {
+            const cart = getCart();
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-full text-gray-500 p-6">
+                        <span class="material-icons text-5xl mb-4">shopping_cart</span>
+                        <p class="text-center">Your cart is empty</p>
+                        <p class="text-center text-sm mt-2">Add some products to your cart</p>
+                    </div>
+                `;
+                cartSubtotal.textContent = '$0.00';
+                cartShipping.textContent = '$0.00';
+                cartTotal.textContent = '$0.00';
+            } else {
+                let subtotal = 0;
+                
+                cartItems.innerHTML = cart.map((item, index) => {
+                    subtotal += item.price * item.quantity;
+                    
+                    return `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                            <div class="cart-item-details">
+                                <h3 class="font-medium">${item.name}</h3>
+                                <p class="text-sm text-gray-500">Color: ${item.color}</p>
+                                <div class="flex items-center justify-between mt-2">
+                                    <div class="quantity-selector">
+                                        <div class="quantity-btn" onclick="updateItemQuantity(${index}, ${item.quantity - 1})">-</div>
+                                        <input type="number" class="quantity-input" value="${item.quantity}" min="1" max="10" onchange="updateItemQuantity(${index}, this.value)">
+                                        <div class="quantity-btn" onclick="updateItemQuantity(${index}, ${item.quantity + 1})">+</div>
+                                    </div>
+                                    <p class="font-semibold">$${(item.price * item.quantity).toFixed(2)}</p>
+                                </div>
+                            </div>
+                            <div class="cart-item-remove" onclick="removeFromCart(${index})">
+                                <span class="material-icons">close</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                const shipping = subtotal > 150 ? 0 : 10;
+                const total = subtotal + shipping;
+                
+                cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+                cartShipping.textContent = shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
+                cartTotal.textContent = `$${total.toFixed(2)}`;
+            }
+        }
+        
+        function updateItemQuantity(index, quantity) {
+            let cart = getCart();
+            
+            if (index >= 0 && index < cart.length) {
+                quantity = parseInt(quantity);
+                
+                if (quantity <= 0) {
+                    removeFromCart(index);
+                } else if (quantity <= 10) {
+                    cart[index].quantity = quantity;
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCart();
+                    updateCartCount();
+                }
+            }
+        }
+        
+        
+        const wishlistToggle = document.getElementById('wishlist-toggle');
+        const wishlistSidebar = document.getElementById('wishlist-sidebar');
+        const wishlistClose = document.getElementById('wishlist-close');
+        const wishlistItems = document.getElementById('wishlist-items');
+        const wishlistCount = document.getElementById('wishlist-count');
+        const mobileWishlistCount = document.getElementById('mobile-wishlist-count');
+        const continueShoppingWishlist = document.getElementById('continue-shopping-wishlist');
+        
+        document.getElementById('mobile-wishlist-toggle').addEventListener('click', function() {
+            openWishlist();
+            closeMenu();
+        });
+        
+        wishlistToggle.addEventListener('click', openWishlist);
+        
+        function openWishlist() {
+            wishlistSidebar.classList.add('active');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            updateWishlist();
+        }
+        
+        wishlistClose.addEventListener('click', closeWishlist);
+        
+        function closeWishlist() {
+            wishlistSidebar.classList.remove('active');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        continueShoppingWishlist.addEventListener('click', closeWishlist);
+       
+        document.querySelectorAll('.add-to-wishlist').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = parseInt(this.getAttribute('data-product-id'));
+                const product = products.find(p => p.id === productId);
+                
+                if (product) {
+                    toggleWishlist(product);
+                }
+            });
+        });
+        
+        function toggleWishlist(product) {
+            let wishlist = getWishlist();
+            const existingItemIndex = wishlist.findIndex(item => item.id === product.id);
+            
+            if (existingItemIndex !== -1) {
+                wishlist.splice(existingItemIndex, 1);
+                showToast(`${product.name} removed from wishlist`, 'info');
+            } else {
+              
+                wishlist.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.images[0]
+                });
+                showToast(`${product.name} added to wishlist`, 'success');
+            }
+            
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            updateWishlistCount();
+        }
+        
+        function removeFromWishlist(index) {
+            let wishlist = getWishlist();
+            
+            if (index >= 0 && index < wishlist.length) {
+                const productName = wishlist[index].name;
+                wishlist.splice(index, 1);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateWishlist();
+                updateWishlistCount();
+                showToast(`${productName} removed from wishlist`, 'info');
+            }
+        }
+        
+        function updateWishlistCount() {
+            const wishlist = getWishlist();
+            const count = wishlist.length;
+            
+            if (count > 0) {
+                wishlistCount.textContent = count;
+                wishlistCount.classList.remove('hidden');
+                
+                mobileWishlistCount.textContent = count;
+                mobileWishlistCount.classList.remove('hidden');
+            } else {
+                wishlistCount.classList.add('hidden');
+                mobileWishlistCount.classList.add('hidden');
+            }
+        }
+        
+        function getWishlist() {
+            return JSON.parse(localStorage.getItem('wishlist')) || [];
+        }
+        
+        function updateWishlist() {
+            const wishlist = getWishlist();
+            
+            if (wishlist.length === 0) {
+                wishlistItems.innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-full text-gray-500 p-6">
+                        <span class="material-icons text-5xl mb-4">favorite_border</span>
+                        <p class="text-center">Your wishlist is empty</p>
+                        <p class="text-center text-sm mt-2">Add products to your wishlist</p>
+                    </div>
+                `;
+            } else {
+                wishlistItems.innerHTML = wishlist.map((item, index) => {
+                    return `
+                        <div class="wishlist-item">
+                            <img src="${item.image}" alt="${item.name}" class="wishlist-item-image">
+                            <div class="wishlist-item-details">
+                                <h3 class="font-medium">${item.name}</h3>
+                                <p class="font-semibold mt-1">$${item.price.toFixed(2)}</p>
+                                <div class="flex space-x-2 mt-2">
+                                    <button class="text-xs px-3 py-1 bg-primary text-white rounded-md hover:bg-primary-light transition-colors" onclick="addToCartFromWishlist(${item.id}); event.stopPropagation();">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="wishlist-item-remove" onclick="removeFromWishlist(${index}); event.stopPropagation();">
+                                <span class="material-icons">close</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+        
+        function addToCartFromWishlist(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            if (product) {
+                addToCart(product);
+                showToast(`${product.name} added to cart`, 'success');
+            }
+        }
+     
+        const accountToggle = document.getElementById('account-toggle');
+        const authModal = document.getElementById('auth-modal');
+        const authClose = document.getElementById('auth-close');
+        const authTabs = document.querySelectorAll('.auth-tab');
+        const authForms = document.querySelectorAll('.auth-form');
+        const loginForm = document.getElementById('login-form-element');
+        const registerForm = document.getElementById('register-form-element');
+        
+        document.getElementById('mobile-account-toggle').addEventListener('click', function() {
+            openAuthModal();
+            closeMenu();
+        });
+        
+        accountToggle.addEventListener('click', openAuthModal);
+        
+        function openAuthModal() {
+            authModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        authClose.addEventListener('click', closeAuthModal);
+        
+        function closeAuthModal() {
+            authModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                authTabs.forEach(t => t.classList.remove('active'));
+                authForms.forEach(f => f.classList.remove('active'));
+                
+                this.classList.add('active');
+                document.getElementById(`${tabId}-form`).classList.add('active');
+            });
+        });
+      
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            
+            if (email && password) {
+                localStorage.setItem('user', JSON.stringify({ email }));
+                showToast('Login successful!', 'success');
+                closeAuthModal();
+                updateAuthUI();
+            } else {
+                showToast('Please fill in all fields', 'error');
+            }
+        });
+        
+      
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+      
+            if (!name || !email || !password || !confirmPassword) {
+                showToast('Please fill in all fields', 'error');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showToast('Passwords do not match', 'error');
+                return;
+            }
+     
+            localStorage.setItem('user', JSON.stringify({ name, email }));
+            showToast('Registration successful!', 'success');
+            closeAuthModal();
+            updateAuthUI();
+        });
+        
+        function updateAuthUI() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            
+            if (user) {
+                accountToggle.innerHTML = '<span class="material-icons">person</span>';
+                document.getElementById('mobile-account-toggle').innerHTML = '<span class="material-icons mr-3">person</span><span>My Account</span>';
+            } else {
+                accountToggle.innerHTML = '<span class="material-icons">person_outline</span>';
+                document.getElementById('mobile-account-toggle').innerHTML = '<span class="material-icons mr-3">person_outline</span><span>Sign In</span>';
+            }
+        }
+        
+        
+        const productModal = document.getElementById('product-modal');
+        const productModalClose = document.getElementById('product-modal-close');
+        const productModalImage = document.getElementById('product-modal-image');
+        const productModalThumbnails = document.getElementById('product-modal-thumbnails');
+        const productModalTitle = document.getElementById('product-modal-title');
+        const productModalDescription = document.getElementById('product-modal-description');
+        const productModalPrice = document.getElementById('product-modal-price');
+        const productModalComparePrice = document.getElementById('product-modal-compare-price');
+        const productModalColors = document.getElementById('product-modal-colors');
+        const productModalQuantity = document.getElementById('product-modal-quantity');
+        const productModalAddToCart = document.getElementById('product-modal-add-to-cart');
+        const productModalAddToWishlist = document.getElementById('product-modal-add-to-wishlist');
+        const productModalBadge = document.getElementById('product-modal-badge');
+        const productModalRating = document.getElementById('product-modal-rating');
+        const productModalReviews = document.getElementById('product-modal-reviews');
+        
+        document.querySelectorAll('.quick-view').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = parseInt(this.getAttribute('data-product-id'));
+                openProductModal(productId);
+            });
+        });
+        
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            if (product) {
+                productModalImage.src = product.images[0];
+                productModalImage.alt = product.name;
+               
+                productModalThumbnails.innerHTML = product.images.map((image, index) => `
+                    <div class="w-16 h-16 rounded-md overflow-hidden cursor-pointer ${index === 0 ? 'ring-2 ring-primary' : ''}" onclick="changeProductImage('${image}', this)">
+                        <img src="${image}" alt="${product.name}" class="w-full h-full object-cover">
+                    </div>
+                `).join('');
+                
+                productModalTitle.textContent = product.name;
+                productModalDescription.textContent = product.description;
+                productModalPrice.textContent = `$${product.price.toFixed(2)}`;
+                
+                if (product.comparePrice) {
+                    productModalComparePrice.textContent = `$${product.comparePrice.toFixed(2)}`;
+                    productModalComparePrice.classList.remove('hidden');
+                } else {
+                    productModalComparePrice.classList.add('hidden');
+                }
+                
+             
+                productModalColors.innerHTML = product.colors.map(color => `
+                    <div class="color-swatch ${color.name === 'Jet Black' ? 'active' : ''}" style="background-color: ${color.code};" data-color="${color.name}" onclick="selectColor(this)"></div>
+                `).join('');
+                
+           
+                if (product.badge) {
+                    productModalBadge.textContent = product.badge;
+                    productModalBadge.classList.remove('hidden');
+                    
+                   
+                    productModalBadge.className = 'text-white text-xs font-medium px-2 py-1 rounded mr-2';
+                    
+                    if (product.badge === 'SALE') {
+                        productModalBadge.classList.add('bg-red-500');
+                    } else if (product.badge === 'NEW') {
+                        productModalBadge.classList.add('bg-secondary');
+                    } else {
+                        productModalBadge.classList.add('bg-primary');
+                    }
+                } else {
+                    productModalBadge.classList.add('hidden');
+                }
+            
+                productModalRating.textContent = product.rating;
+                productModalReviews.textContent = product.reviews;
+          
+                productModalAddToCart.setAttribute('data-product-id', product.id);
+                productModalAddToCart.onclick = function() {
+                    const quantity = parseInt(productModalQuantity.value);
+                    const colorElement = productModalColors.querySelector('.color-swatch.active');
+                    const color = colorElement ? colorElement.getAttribute('data-color') : 'Jet Black';
+                    
+                    addToCart(product, quantity, color);
+                    showToast(`${product.name} added to cart`, 'success');
+                    closeProductModal();
+                };
+                
+              
+                productModalAddToWishlist.setAttribute('data-product-id', product.id);
+                productModalAddToWishlist.onclick = function() {
+                    toggleWishlist(product);
+                };
+           
+                productModalQuantity.value = 1;
+                
+                productModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeProductModal() {
+            productModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        productModalClose.addEventListener('click', closeProductModal);
+        
+        
+        document.getElementById('decrease-quantity').addEventListener('click', function() {
+            const quantity = parseInt(productModalQuantity.value);
+            if (quantity > 1) {
+                productModalQuantity.value = quantity - 1;
+            }
+        });
+        
+        document.getElementById('increase-quantity').addEventListener('click', function() {
+            const quantity = parseInt(productModalQuantity.value);
+            if (quantity < 10) {
+                productModalQuantity.value = quantity + 1;
+            }
+        });
+        
+        window.changeProductImage = function(imageSrc, element) {
+            productModalImage.src = imageSrc;
+            
+            const thumbnails = productModalThumbnails.querySelectorAll('div');
+            thumbnails.forEach(thumb => thumb.classList.remove('ring-2', 'ring-primary'));
+            element.classList.add('ring-2', 'ring-primary');
+        };
+        
+      
+        window.selectColor = function(element) {
+            const colors = productModalColors.querySelectorAll('.color-swatch');
+            colors.forEach(color => color.classList.remove('active'));
+            element.classList.add('active');
+        };
+        
+       
+        function showToast(message, type = 'info') {
+            const toastContainer = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            
+            let icon = '';
+            switch (type) {
+                case 'success':
+                    icon = 'check_circle';
+                    break;
+                case 'error':
+                    icon = 'error';
+                    break;
+                default:
+                    icon = 'info';
+            }
+            
+            toast.innerHTML = `
+                <span class="material-icons mr-2">${icon}</span>
+                <span>${message}</span>
+            `;
+            
+            toastContainer.appendChild(toast);
+            
+          
+            setTimeout(() => {
+                toast.classList.add('active');
+            }, 10);
+            
+            
+            setTimeout(() => {
+                toast.classList.remove('active');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3000);
+        }
+        
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+        
+            if (!name || !email || !subject || !message) {
+                showToast('Please fill in all fields', 'error');
+                return;
+            }
+            
+           
+            showToast('Your message has been sent!', 'success');
+            contactForm.reset();
+        });
+        
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('.material-icons');
+            
+                answer.classList.toggle('active');
+                
+                if (answer.classList.contains('active')) {
+                    icon.style.transform = 'rotate(45deg)';
+                } else {
+                    icon.style.transform = 'rotate(0)';
+                }
+            });
+        });
+        
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navHeight = navbar.offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (mobileMenu.classList.contains('active')) {
+                        closeMenu();
+                    }
+                }
+            });
+        });
+        
+        updateCartCount();
+        updateWishlistCount();
+        updateAuthUI();
+    
+        window.openProductModal = openProductModal;
+        window.removeFromCart = removeFromCart;
+        window.updateItemQuantity = updateItemQuantity;
+        window.removeFromWishlist = removeFromWishlist;
+        window.addToCartFromWishlist = addToCartFromWishlist;
+    </script>
+</body>
+</html>
+    
